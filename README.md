@@ -1,3 +1,5 @@
+nota: continuar en 32:50 (enrutamiento de páginas / layout)
+
 # Astro Starter Kit: Basics
 
 ```sh
