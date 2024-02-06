@@ -1,4 +1,4 @@
-nota: continuar en 32:50 (enrutamiento de páginas / layout)
+nota: continuar en 1:00:10 (Estilando Card para mostrar información)
 
 # Astro Starter Kit: Basics
 
