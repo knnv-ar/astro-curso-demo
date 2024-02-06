@@ -1,4 +1,4 @@
-nota: continuar en 1:00:10 (Estilando Card para mostrar información)
+nota: continuar en 1:10:32 (Páginas dinámicas (getStaticPaths))
 
 # Astro Starter Kit: Basics
 
