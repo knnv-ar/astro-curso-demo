@@ -1,0 +1,40 @@
+---
+import Layout from "../../layouts/Layout.astro"
+//import type { GetStaticPaths } from "astro";
+import { getLaunchBy } from "../../services/spacex"
+import { getLatestLaunches } from "../../services/spacex"
+
+const { id } = Astro.params
+
+let launch
+if (id) {
+    launch = await getLaunchBy({ id })
+}
+
+export async function getStaticPaths() {
+    // Static (SSG) Mode vs Server (SSR) Mode
+    // el primero es cuando sabemos la cantidad exacta de elementos porque no varían,
+    // la segunda es cuando la cantidad varia constantemente.
+    // Abajo tenemos el ejemplo de forma SSG:
+    
+    const launches = await getLatestLaunches()
+    
+    return launches.map(launch =>  ({
+        params: { id: launch.id},
+    }))
+}
+
+console.log(launch)
+---
+
+<Layout title={`Lanzamiento ${id}`}>
+    <article class="flex gap-y-4 flex-col">
+        <img
+            class="w-52 h-auto"
+            src={launch?.links?.patch.small}
+            alt={launch?.name} />
+        <h2 class="text-4cl text-white font-bold">Launch #{launch?.flight_number}</h2>
+        <p class="text-lg">{launch?.details}</p>
+    </article>    
+</Layout>
+
