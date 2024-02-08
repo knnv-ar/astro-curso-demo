@@ -1,6 +1,8 @@
 ---
 import { Counter } from "./Counter"
-import HeaderButton from "./HeaderButton.astro"
+import HeaderButtonRoot from "./HeaderButtonRoot.astro"
+import HeaderButtonAbout from "./HeaderButtonAbout.astro"
+import HeaderButtonTimeline from "./HeaderButtonTimeline.astro"
 ---
 
 <header class="py-8 px-4 mx-auto max-w-xl lg:py-16 lg:px-6">
@@ -15,9 +17,9 @@ import HeaderButton from "./HeaderButton.astro"
 
   <Counter transition:persist  client:visible/>
   <nav
-    class="flex flex-col items-center justify-between w-full text-center md:flex-row"
+    class="flex flex-col mt-4 items-center justify-between w-full text-center md:flex-row"
   >
-    <HeaderButton class="text-white" href="/">
+    <HeaderButtonRoot class="text-white" href="/">
       <svg
         slot="antes del texto"
         width="24"
@@ -34,8 +36,8 @@ import HeaderButton from "./HeaderButton.astro"
           d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path></svg
       >
       Latests launches
-    </HeaderButton>
-    <HeaderButton class="text-white" href="/about">
+    </HeaderButtonRoot>
+    <HeaderButtonAbout class="text-white" href="/about">
       <svg
         slot="antes del texto"
         width="24"
@@ -51,8 +53,8 @@ import HeaderButton from "./HeaderButton.astro"
         ></path><path d="M11 12h1v4h1"></path></svg
       >
       About
-    </HeaderButton>
-    <HeaderButton class="text-white" href="/oldest">
+    </HeaderButtonAbout>
+    <HeaderButtonTimeline class="text-white" href="/oldest">
       <svg
         slot="antes del texto"
         width="24"
@@ -68,7 +70,7 @@ import HeaderButton from "./HeaderButton.astro"
         ></path><path d="M19 16v6"></path><path d="M22 19l-3 3l-3 -3"
         ></path></svg
       >
-      First lauches
-    </HeaderButton>
+      Schedule
+    </HeaderButtonTimeline>
   </nav>
 </header>
