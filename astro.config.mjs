@@ -7,5 +7,5 @@ import preact from "@astrojs/preact";
 export default defineConfig({
   integrations: [tailwind(), preact()],
   //output: 'server'
-  output: 'hybrid'
+  //output: 'hybrid'
 });
